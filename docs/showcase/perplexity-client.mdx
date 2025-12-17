@@ -1,66 +1,88 @@
 ---
-title: Perplexity-client
-description: An API-based frontend client that provides a clean userinterface, also supports openrouter.
+title: Perplexity Client | Desktop AI Chat Interface with API Controls
+description: An Electron-based desktop client for Perplexity API with advanced features like temperature control, model selection, custom system prompts, and API debugging mode
 sidebar_position: 27
-keywords: [debugging, Openrouter, Front-end client, API , clean ui]
+keywords: [perplexity client, desktop app, electron, api client, chat interface, model selector, temperature, top-p, debugging, openrouter]
 ---
 
-# Perplexity-Client 
+**Perplexity Client** is an Electron-based desktop application that provides a polished interface for interacting with Perplexity's Sonar API. Unlike typical chat interfaces, it exposes advanced API parameters like temperature, top-p, and max tokens, making it ideal for developers who want fine-grained control over their AI interactions while enjoying a beautiful, macOS-inspired UI.
 
-Perplexity client is a API-First frontend client, it has all sorts of features that normal perplexity doesn't,
-this electron based app also offers a neat user interface with high customizability and a mac-os styled window
-title If your looking to use your pro credits that are going to expire anyway, use this!
-
-![Image](https://dc.missuo.ru/file/1449460069946097715)
+![Perplexity Client Interface](/img/perplexity-client-main.png)
 
 ## Features
 
-- API-based 
-- Deep research
-- Space (Custom instructions)
+* **Multiple Sonar Models** with support for Sonar, Sonar Pro, and Sonar Reasoning Pro
+* **Custom Spaces** with save/load functionality for different use cases
+* **API Parameter Controls** including temperature, top-p, and max tokens adjustments
+* **API Debugging Mode** showing full request/response payloads for troubleshooting
+* **Token Usage Tracking** to monitor API consumption and costs
+* **Focus Modes** for specialized tasks like coding, writing, and research
 
 ## Prerequisites
 
-- Node.js (v16 or higher)
-- npm or yarn
+* Node.js v16 or higher
+* npm or yarn
+* Perplexity API key
 
 ## Installation
 
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-
-Build:
 ```bash
-npm run build:win  # For Windows
-npm run build:mac  # For macOS
-npm run build:linux # For Linux
+# Clone the repository
+git clone https://github.com/straight-heart/Perplexity-client-.git
+cd Perplexity-client-
+
+# Install dependencies
+npm install
+
+npm run dev
 ```
+
+## Build
+
+Build the application for your platform:
+
+```bash
+npm run build:win    # Windows
+npm run build:mac    # macOS
+npm run build:linux  # Linux
+```
+
+## Configuration
+
+API keys are managed directly within the application:
+
+1. Launch the app and open Settings (gear icon)
+2. In the **API Keys** section, click **Add Key**
+3. Enter your Perplexity API key
+4. The key is stored securely and persists across sessions
+
+For custom system prompts, use the **Spaces** feature to save and switch between different instruction sets.
 
 ## Usage
 
-#Basic Usage
+1. **Launch**: Run `npm run dev` or use the built application
+2. **Add API Key**: Open Settings and add your Perplexity API key
+3. **Select Model**: Use the dropdown to choose between Sonar variants
+4. **Create Spaces**: Set up custom system prompts for different tasks
+5. **Chat**: Start conversing with real-time streaming responses
+6. **Debug**: Enable API debugging to see full request/response details
+7. **Track Usage**: Monitor token consumption in the Settings panel
 
--Launch the app via npm start, or download the zip
--Enter your Perplexity API key, or OpenRouter API key in settings
--Use spaces for customized output
--Streaming responses displayed in real-time
--Model selection dropdown (e.g., sonar-pro, sonar-large)
--Search focus options (academic, web, etc.)
--History sidebar for previous conversations
+## Screenshots
 
-## Code Explanation
+| Feature | Preview |
+|---------|---------|
+| Spaces (Custom Instructions) | ![Spaces](/img/perplexity-client-spaces.png) |
+| Model & Parameter Controls | ![Parameters](/img/perplexity-client-parameters.png) |
+| API Debugging Mode | ![Debug](/img/perplexity-client-debug.png) |
+| Theme Selection | ![Themes](/img/perplexity-client-themes.png) |
 
--Project total ~2000+ LOC across main/process, renderer, HTML/CSS, utils. Customize API key in settings or env. Run npm start for demo.
+## Limitations
+
+* Desktop only (Windows, macOS, Linux) — no mobile or web version
+* Requires internet connection for API calls
+* API key required for functionality
 
 ## Links
 
 - [GitHub Repository](https://github.com/straight-heart/Perplexity-client-)
-
-## Limitations
-
-Desktop only (no mobile/web build)
-No offline mode (requires internet for API)
